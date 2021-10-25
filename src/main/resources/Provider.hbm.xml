@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-jun-2020 19:16:14 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class name="com.serbatic.course.datamodel.entities.xmlmapping.Provider" table="PROVEEDOR">
+  <id name="providerId" type="int">
+   <column name="ID"/>
+  </id>
+  <property generated="never" lazy="false" name="cif" type="java.lang.String">
+   <column name="CIF"/>
+  </property>
+  <property generated="never" lazy="false" name="businessName" type="java.lang.String">
+   <column name="RAZON_SOCIAL"/>
+  </property>
+  <property generated="never" lazy="false" name="address" type="java.lang.String">
+   <column name="DIRECCION"/>
+  </property>
+  <property generated="never" lazy="false" name="phone" type="java.lang.String">
+   <column name="TELEFONO"/>
+  </property>
+  <property generated="never" lazy="false" name="email" type="java.lang.String">
+   <column name="EMAIL"/>
+  </property>
+ </class>
+</hibernate-mapping>
