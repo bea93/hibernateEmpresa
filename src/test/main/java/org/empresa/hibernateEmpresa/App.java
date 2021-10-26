@@ -19,8 +19,7 @@ public class App {
 	static SessionFactory sessionFactory;
 
 	public static void main(String[] args) {
-		int opcion, id, cod_responsable;
-		String nombre;
+		int opcion;
 		Scanner teclado = new Scanner(System.in);
 		String methodName = App.class.getSimpleName() + ".main()";
 		logger.info(String.format("%1$s: >>>>>> Main execution started.", methodName));
@@ -41,21 +40,54 @@ public class App {
 
 				switch (opcion) {
 				case 1:
-					Scanner teclado2 = new Scanner(System.in);
+					int id, cod_responsable;
+					String nombre;
+					
 					System.out.println("Introduzca id del departamento: ");
 					id = teclado.nextInt();
 					System.out.println("Introduzca nombre del departamento:");
-	    			nombre = teclado2.nextLine();
+	    			nombre = teclado.nextLine();
 	    			System.out.println("Introduzca el codigo de responsable:");
 	    			cod_responsable = teclado.nextInt();
 	    			
 	    			Departamento depar1 = new Departamento(id, nombre, cod_responsable);
-	                DepartamentoDAO.insertarDepartamento(session, depar1);
+	            	DepartamentoDAO departamento = new DepartamentoDAO();
+	                departamento.insertarDepartamento(session, depar1);
 	                
-	                tx.commit();
 	                logger.info("Se ha introducido un departamento en la BD.");
 					break;
 				case 2:
+					int codigo, cod_departamento;
+					String nombre, apellido1, apellido2, lugar_nacimiento, fecha_nacimiento, direccion, telefono, puesto;
+					
+					System.out.println("Introduzca código de empleado:");
+	    			codigo = teclado.nextInt();			
+	    			System.out.println("Introduzca el nombre:");
+	    			nombre = teclado.nextLine();
+	    			System.out.println("Introduzca el primer apellido:");
+	    			apellido1 = teclado.nextLine();
+	    			System.out.println("Introduzca el segundo apellido:");
+	    			apellido2 = teclado.nextLine();
+	    			System.out.println("Introduzca el lugar de nacimiento:");
+	    			lugar_nacimiento = teclado.nextLine();
+	    			System.out.println("Introduzca la fecha de nacimiento:");
+	    			fecha_nacimiento = teclado.nextLine();
+	    			System.out.println("Introduzca la dirección:");
+	    			direccion = teclado.nextLine();
+	    			System.out.println("Introduzca el teléfono:");
+	    			telefono = teclado.nextLine();
+	    			System.out.println("Introduzca el puesto:");
+	    			puesto = teclado.nextLine();
+	    			System.out.println("Introduzca el código del departamento:");
+	    			cod_departamento = teclado.nextInt();
+	    			
+	    			Empleado emple1 = new Empleado(codigo, nombre, apellido1, apellido2, 
+	    										   lugar_nacimiento, fecha_nacimiento, direccion, 
+	    										   telefono, puesto, cod_departamento);
+	    			
+	            	EmpleadoDAO empleado = new EmpleadoDAO();
+	            	
+	                empleado.insertarEmpleado(session, emple1);
 					
 					logger.info("OPCIÓN 2.");
 					break;

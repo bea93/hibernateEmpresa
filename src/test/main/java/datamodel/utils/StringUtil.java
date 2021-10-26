@@ -1,4 +1,4 @@
-package datamodel.utils;
+package org.empresa.hibernateEmpresa.datamodel.utils;
 
 public abstract class StringUtil {
 
