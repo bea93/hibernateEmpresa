@@ -9,8 +9,9 @@ public class DepartamentoDAO {
 		s.save(departamento);
 	}
 
-	public static Departamento getDepartamento(Session s, Departamento departamento) {
-		return s.get(Departamento.class, departamento);
+	
+	public static Departamento getDepartamento(Session s, int id) {
+		return s.get(Departamento.class, id);
 	}
 
 	public static void updateDepartamento(Session s, Departamento departamento) {

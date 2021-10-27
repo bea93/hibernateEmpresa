@@ -19,7 +19,8 @@ public class Empleado implements java.io.Serializable {
 	private String puesto;
 	private int codDepartamento;
 
-	public Empleado() {
+	public Empleado(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public Empleado(int codigo, String nombre, String apellido1, String apellido2, String lugarNacimiento,

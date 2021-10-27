@@ -10,7 +10,8 @@ public class Departamento implements java.io.Serializable {
 	private String nombre;
 	private int codResponsable;
 
-	public Departamento() {
+	public Departamento(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public Departamento(int codigo, String nombre, int codResponsable) {
@@ -41,6 +42,11 @@ public class Departamento implements java.io.Serializable {
 
 	public void setCodResponsable(int codResponsable) {
 		this.codResponsable = codResponsable;
+	}
+
+	@Override
+	public String toString() {
+		return "Departamento [codigo=" + codigo + ", nombre=" + nombre + ", codResponsable=" + codResponsable + "]";
 	}
 
 }
